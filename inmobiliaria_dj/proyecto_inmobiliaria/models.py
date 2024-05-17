@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Region(models.Model):
@@ -15,6 +16,7 @@ class Comuna(models.Model):
         return self.nombre
     
 class Usuario(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
     rut = models.CharField(max_length=10, unique=True)
@@ -26,6 +28,9 @@ class Usuario(models.Model):
         ('arrendador', 'Arrendador'),
     )
     tipo_usuario = models.CharField(max_length=12, choices=TIPO_USUARIO_CHOICES)
+
+    def __str__(self):
+        return self.user.username
 
 class Inmueble(models.Model):
     nombre = models.CharField(max_length=100)
@@ -45,3 +50,8 @@ class Inmueble(models.Model):
     tipo_inmueble = models.CharField(max_length=15, choices=TIPO_INMUEBLE_CHOICES)
     precio_mensual = models.DecimalField(max_digits=10, decimal_places=2)
     arrendador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='propiedades')
+
+    def __str__(self):
+        return self.nombre
+    
+    
