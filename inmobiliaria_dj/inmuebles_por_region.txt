@@ -1,0 +1,4 @@
+Región: Metropolitana de Santiago
+ - Nombre: Casa, Descripción: Casa independiente con hermoso jardín en zona oriente de la ciudad.
+ - Nombre: Departamento, Descripción: Hermoso departamento con vista al cerro.
+

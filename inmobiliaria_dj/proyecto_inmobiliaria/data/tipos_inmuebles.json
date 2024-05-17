@@ -1,0 +1,38 @@
+[
+    {
+        "model": "proyecto_inmobiliaria.inmueble",
+        "pk": 1,
+        "fields": {
+            "nombre": "Casa",
+            "descripcion": "Casa independiente con hermoso jardín en zona oriente de la ciudad.",
+            "m2_construidos": 200,
+            "m2_totales": 300,
+            "estacionamientos": 2,
+            "habitaciones": 4,
+            "baños": 3,
+            "direccion": "Calle Providencia 123",
+            "comuna": 322,
+            "tipo_inmueble": "casa",
+            "precio_mensual": 150000,
+            "arrendador": 2
+        }
+    },
+    {
+        "model": "proyecto_inmobiliaria.inmueble",
+        "pk": 2,
+        "fields": {
+            "nombre": "Departamento",
+            "descripcion": "Hermoso departamento con vista al cerro.",
+            "m2_construidos": 80,
+            "m2_totales": 100,
+            "estacionamientos": 1,
+            "habitaciones": 2,
+            "baños": 1,
+            "direccion": "Av. Cristobal Colón 456",
+            "comuna": 323,
+            "tipo_inmueble": "departamento",
+            "precio_mensual": 100000,
+            "arrendador": 3
+        }
+    }
+]

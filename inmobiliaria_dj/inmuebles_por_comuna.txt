@@ -1,0 +1,6 @@
+Comuna: Las Condes
+ - Nombre: Casa, Descripción: Casa independiente con hermoso jardín en zona oriente de la ciudad.
+
+Comuna: Lo Barnechea
+ - Nombre: Departamento, Descripción: Hermoso departamento con vista al cerro.
+

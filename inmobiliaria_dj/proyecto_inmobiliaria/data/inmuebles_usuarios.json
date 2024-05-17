@@ -1,0 +1,41 @@
+[
+    {
+        "model": "proyecto_inmobiliaria.usuario",
+        "pk": 1, 
+        "fields": {
+            "nombre": "María", 
+            "apellidos": "González", 
+            "rut": "12433509-0", 
+            "direccion": "Av. Vicuña Mackenna 123, Santiago", 
+            "telefono": "123456789", 
+            "correo_electronico": "margo@gmail.com", 
+            "tipo_usuario": "arrendatario"
+        }
+    },
+    {
+        "model": "proyecto_inmobiliaria.usuario",
+        "pk": 2, 
+        "fields": {
+            "nombre": "Tomás", 
+            "apellidos": "Barraza", 
+            "rut": "14523092-0", 
+            "direccion": "Av. Los Leones 456, Providencia", 
+            "telefono": "987654321", 
+            "correo_electronico": "tombar@gmail.com", 
+            "tipo_usuario": "arrendador"
+        }
+    },
+    {
+        "model": "proyecto_inmobiliaria.usuario",
+        "pk": 3, 
+        "fields": {
+            "nombre": "Julio", 
+            "apellidos": "Contreras", 
+            "rut": "13244605-1", 
+            "direccion": "Av. Macul 763, Macul", 
+            "telefono": "963963963", 
+            "correo_electronico": "jucont@gmail.com", 
+            "tipo_usuario": "arrendador"
+        }
+    }
+]
