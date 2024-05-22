@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Perfil</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block 'contenido' %}
+<div class="container my-4">
     <h2>Perfil del Usuario</h2>
-    <p>Nombre de usuario: {{ user.username }}</p>
-    <p>Nombre: {{ user.first_name }}</p>
-    <p>Apellido: {{ user.last_name }}</p>
-    <p>Email: {{ user.email }}</p>
-    <a href="{% url 'edit_profile' %}">Editar Perfil</a>
-    <a href="{% url 'logout' %}">Cerrar sesión</a>
-</body>
-</html>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+            <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+            <p><strong>Apellido:</strong> {{ usuario.apellidos }}</p>
+            <p><strong>Email:</strong> {{ usuario.correo_electronico }}</p>
+            <p><strong>RUT:</strong> {{ user.usuario.rut }}</p>
+            <p><strong>Dirección:</strong> {{ user.usuario.direccion }}</p>
+            <p><strong>Teléfono:</strong> {{ user.usuario.telefono }}</p>
+            <p><strong>Tipo de Usuario:</strong> {{ usuario.get_tipo_usuario_display }}</p>
+        </div>
+    </div>
+    <a href="{% url 'edit_profile' %}" class="btn btn-primary">Editar Perfil</a>
+</div>
+{% endblock %}

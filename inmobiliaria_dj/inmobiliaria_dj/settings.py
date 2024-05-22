@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'inmobiliaria_dj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'inm_db',
+        'NAME': 'inmobiliaria_db',
         'USER': 'd-cuevas',
         'PASSWORD': '1241350a',
         'HOST': 'localhost',
@@ -125,3 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirigir después de iniciar sesión
+LOGIN_REDIRECT_URL = 'profile'
+
+# Opcional: redirigir a una página de inicio después del cierre de sesión
+LOGOUT_REDIRECT_URL = 'home'

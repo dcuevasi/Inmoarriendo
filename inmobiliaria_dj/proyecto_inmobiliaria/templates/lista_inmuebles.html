@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Mis Inmuebles{% endblock %}
+
+{% block 'contenido' %}
+<div class="container">
+    <h2 class="mt-4">Mis Inmuebles</h2>
+    <ul class="list-group mt-3">
+        {% for inmueble in inmuebles %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h5>{{ inmueble.nombre }}</h5>
+                        <p><strong>Dirección:</strong> {{ inmueble.direccion }}</p>
+                        <p><strong>Descripción:</strong> {{ inmueble.descripcion }}</p>
+                        <p><strong>M2 Construidos:</strong> {{ inmueble.m2_construidos }}</p>
+                        <p><strong>M2 Totales:</strong> {{ inmueble.m2_totales }}</p>
+                        <p><strong>Estacionamientos:</strong> {{ inmueble.estacionamientos }}</p>
+                        <p><strong>Habitaciones:</strong> {{ inmueble.habitaciones }}</p>
+                        <p><strong>Baños:</strong> {{ inmueble.baños }}</p>
+                        <p><strong>Comuna:</strong> {{ inmueble.comuna.nombre }}</p>
+                        <p><strong>Tipo de Inmueble:</strong> {{ inmueble.get_tipo_inmueble_display }}</p>
+                        <p><strong>Precio Mensual:</strong> {{ inmueble.precio_mensual }}</p>
+                        <a href="{% url 'editar_inmueble' inmueble.id %}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{% url 'eliminar_inmueble' inmueble.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                    </div>
+                    
+                    
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_inmueble' %}" class="btn btn-success mt-3">Agregar Nuevo Inmueble</a>
+</div>
+{% endblock %}

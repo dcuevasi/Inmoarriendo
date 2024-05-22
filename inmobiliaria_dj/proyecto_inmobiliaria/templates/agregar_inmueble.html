@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Agregar Inmueble{% endblock %}
+
+{% block 'contenido' %}
+<div class="container d-flex justify-content-center my-3">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Agregar Inmueble</h4>
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="id_nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="id_nombre" name="nombre" required>
+                        <div class="invalid-feedback">
+                            Nombre del inmueble es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_descripcion" class="form-label">Descripción:</label>
+                        <textarea class="form-control" id="id_descripcion" name="descripcion" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Descripción válida es requerida.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_m2_construidos" class="form-label">M2 construidos:</label>
+                        <input type="number" step="any" class="form-control" id="id_m2_construidos" name="m2_construidos" required>
+                        <div class="invalid-feedback">
+                            M2 construidos válidos son requeridos.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_m2_totales" class="form-label">M2 totales:</label>
+                        <input type="number" step="any" class="form-control" id="id_m2_totales" name="m2_totales" required>
+                        <div class="invalid-feedback">
+                            M2 totales válidos son requeridos.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_estacionamientos" class="form-label">Estacionamientos:</label>
+                        <input type="number" class="form-control" id="id_estacionamientos" name="estacionamientos" required>
+                        <div class="invalid-feedback">
+                            Número de estacionamientos es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_habitaciones" class="form-label">Habitaciones:</label>
+                        <input type="number" class="form-control" id="id_habitaciones" name="habitaciones" required>
+                        <div class="invalid-feedback">
+                            Número de habitaciones es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_baños" class="form-label">Baños:</label>
+                        <input type="number" class="form-control" id="id_baños" name="baños" required>
+                        <div class="invalid-feedback">
+                            Número de baños es requerido.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_direccion" class="form-label">Dirección:</label>
+                        <input type="text" class="form-control" id="id_direccion" name="direccion" required>
+                        <div class="invalid-feedback">
+                            Dirección válida es requerida.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_comuna" class="form-label">Comuna:</label>
+                        <select class="form-select" id="id_comuna" name="comuna" required>
+                            {% for comuna in comunas %}
+                                <option value="{{ comuna.id }}">{{ comuna.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, selecciona una comuna válida.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_tipo_inmueble" class="form-label">Tipo de Inmueble:</label>
+                        <select class="form-select" id="id_tipo_inmueble" name="tipo_inmueble" required>
+                            {% for key, value in form.fields.tipo_inmueble.choices %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, selecciona un tipo de inmueble válido.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="id_precio_mensual" class="form-label">Precio mensual:</label>
+                        <input type="number" step="any" class="form-control" id="id_precio_mensual" name="precio_mensual" required>
+                        <div class="invalid-feedback">
+                            Precio mensual válido es requerido.
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+                <button class=" btn btn-primary btn-lg" type="submit">Agregar</button>
+            </form>
+            <a href="{% url 'lista_inmuebles' %}" class="btn btn-secondary mt-3">Cancelar</a>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img src="{% static 'img/arriendo5.jpg' %}" class="img-fluid w-100 h-100" alt="Imagen de inmueble" style="object-fit: cover;">
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}InmoArriendo{% endblock %}
+
+{% block 'contenido' %}
+
+<div class="mt-1">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="p-4 rounded shadow-sm">
+                <h1 class="mb-3 h1 font-weight-bold">¡Bienvenido a InmoArriendo!</h2>
+                <h2 class="lead mb-1 h2">¿Estás buscando arriendo?</h2>
+                <p class="lead mb-1">Te podemos ayudar</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="">
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/arriendo2.png' %}" class="d-block w-100" alt="Imagen departamento">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/arriendo3.png' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/arriendo6.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+{% endblock %}
